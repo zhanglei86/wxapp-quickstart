@@ -21,7 +21,7 @@ Page({
       { 'name': '商品3' },
       { 'name': '商品4' }
     ],
-    array: ['a', 'b', 'c'],
+    arr: ['a', 'b', 'c'],
     arr99: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     // test,模版
     contactMe: {
@@ -84,11 +84,15 @@ Page({
       message: 'MINA'
     })
   },
+  tapName: function (event) {
+    console.log(event)
+  },
   add: function (e) {
     this.setData({
       count: this.data.count + 1
     })
-  }
+    console.debug(e)
+  },
   /** test end */
 
 })

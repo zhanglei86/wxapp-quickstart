@@ -28,13 +28,13 @@
     <block wx:for='{{goodItems}}' wx:for-item='item' wx:for-index='idx' wx:key='index333'>
       <view>{{idx}}:{{item.name}}</view>
     </block>
-    <view wx:for='{{array}}'>{{index}}:{{item}}</view>
+    <view wx:for='{{arr}}' wx:key='arrId'>{{index}}:{{item}}</view>
   </view>
 
   <!-- test,九九乘法表 -->
   <block wx:if='{{hidFlag == true}}'>
-    <view wx:for='{{arr99}}' wx:for-item='i'>
-      <view wx:for='{{arr99}}' wx:for-item='j'>
+    <view wx:for='{{arr99}}' wx:for-item='i' wx:key='iId'>
+      <view wx:for='{{arr99}}' wx:for-item='j' wx:key='jId'>
         <view wx:if='{{i <= j}}'>
           {{i}} * {{j}} = {{i * j}}
         </view>
@@ -60,7 +60,8 @@
   </view>
   <view hidden='{{hidFlag}}'>
     <view>---分割线,事件---</view>
-    <view bindtap='add'> {{count}} </view>
+    <view id="tapTest" data-hi="zea" bindtap="tapName"> tapName, info级别 </view>
+    <view id='tapTestAdd' bindtap='add'> {{count}} </view>
   </view>
   <!-- test end -->
 
