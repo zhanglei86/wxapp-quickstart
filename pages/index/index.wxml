@@ -1,4 +1,8 @@
 <!--index.wxml-->
+
+<!-- test -->
+<import src="/pages/common/test_template.wxml"/>
+
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
@@ -45,20 +49,6 @@
     <view wx:else>其他，随便吧</view>
   </view>
 
-  <!-- test 模版 -->
-  <template name='temp1'>
-    <view>
-      <text>姓名：{{name}}</text>
-      <text>联系方式：{{phone}}</text>
-      <text>地址：{{address}}</text>
-    </view>
-  </template>
-  <template name='staffName'>
-    <view>
-      FirstName: {{firstName}}, LastName: {{lastName}}
-    </view>
-  </template>
-
   <view hidden='{{hidFlag}}'>
     <view>---分割线,模版1---</view>
     <template is='temp1' data='{{...contactMe}}'></template>
@@ -71,7 +61,6 @@
     <view>---分割线,事件---</view>
     <view bindtap='add'> {{count}} </view>
   </view>
-
   <!-- test end -->
 
 </view>

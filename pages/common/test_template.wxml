@@ -1,0 +1,13 @@
+<!-- test 模版 -->
+<template name='temp1'>
+  <view>
+    <text>姓名：{{name}}</text>
+    <text>联系方式：{{phone}}</text>
+    <text>地址：{{address}}</text>
+  </view>
+</template>
+<template name='staffName'>
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+</template>
