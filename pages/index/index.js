@@ -7,7 +7,33 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
+    /** test start */
+    hidFlag: false,
+    message: 'WeChat',
+    count: 1,
+    condition: Math.floor(Math.random() * 3 + 1),
+    // test,列表
+    goodItems: [
+      { 'name': '商品1' },
+      { 'name': '商品2' },
+      { 'name': '商品3' },
+      { 'name': '商品4' }
+    ],
+    array: ['a', 'b', 'c'],
+    arr99: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    // test,模版
+    contactMe: {
+      name: '张三',
+      phone: '185',
+      address: '中国'
+    },
+    staffA: { firstName: 'Hulk', lastName: 'Hu' },
+    staffB: { firstName: 'Shang', lastName: 'You' },
+    staffC: { firstName: 'Gideon', lastName: 'Lin' },
+    /** test end */
+
   },
   //事件处理函数
   bindViewTap: function() {
@@ -50,5 +76,19 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  /** test start */
+  changeName: function (e) {
+    this.setData({
+      message: 'MINA'
+    })
+  },
+  add: function (e) {
+    this.setData({
+      count: this.data.count + 1
+    })
   }
+  /** test end */
+
 })

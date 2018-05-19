@@ -10,4 +10,68 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+
+  <!-- test start -->
+  <view hidden='{{hidFlag}}'>
+    <view>---分割线,数据绑定---</view>
+    <button bindtap='changeName'>-[Click me]-</button>
+    <text>Hello {{message}} !</text>
+  </view>
+
+  <view hidden='{{hidFlag ? false : true}}'>
+    <view>---分割线,列表渲染---</view>
+    <block wx:for='{{goodItems}}' wx:for-item='item' wx:for-index='idx' wx:key='index333'>
+      <view>{{idx}}:{{item.name}}</view>
+    </block>
+    <view wx:for='{{array}}'>{{index}}:{{item}}</view>
+  </view>
+
+  <!-- 九九乘法表 -->
+  <block wx:if='{{hidFlag == true}}'>
+    <view wx:for='{{arr99}}' wx:for-item='i'>
+      <view wx:for='{{arr99}}' wx:for-item='j'>
+        <view wx:if='{{i <= j}}'>
+          {{i}} * {{j}} = {{i * j}}
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view hidden='{{hidFlag}}'>
+    <view>---分割线,条件渲染---</view>
+    <view>今天吃什么？答：{{condition}}</view>
+    <view wx:if='{{condition == 1}}'>1饺子</view>
+    <view wx:elif='{{condition == 2}}'>2米饭</view>
+    <view wx:else>其他，随便吧</view>
+  </view>
+
+  <!-- test 模版 -->
+  <template name='temp1'>
+    <view>
+      <text>姓名：{{name}}</text>
+      <text>联系方式：{{phone}}</text>
+      <text>地址：{{address}}</text>
+    </view>
+  </template>
+  <template name='staffName'>
+    <view>
+      FirstName: {{firstName}}, LastName: {{lastName}}
+    </view>
+  </template>
+
+  <view hidden='{{hidFlag}}'>
+    <view>---分割线,模版1---</view>
+    <template is='temp1' data='{{...contactMe}}'></template>
+    <view>---分割线,模版2---</view>
+    <template is='staffName' data='{{...staffA}}'></template>
+    <template is='staffName' data='{{...staffB}}'></template>
+    <template is='staffName' data='{{...staffC}}'></template>
+  </view>
+  <view hidden='{{hidFlag}}'>
+    <view>---分割线,事件---</view>
+    <view bindtap='add'> {{count}} </view>
+  </view>
+
+  <!-- test end -->
+
 </view>
