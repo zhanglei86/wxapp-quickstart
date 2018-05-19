@@ -1,8 +1,9 @@
 <!--index.wxml-->
 
 <!-- test -->
-<import src="/pages/common/test_template.wxml"/>
+<import src='/pages/common/test_template.wxml'/>
 
+<!-- index -->
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
@@ -30,7 +31,7 @@
     <view wx:for='{{array}}'>{{index}}:{{item}}</view>
   </view>
 
-  <!-- 九九乘法表 -->
+  <!-- test,九九乘法表 -->
   <block wx:if='{{hidFlag == true}}'>
     <view wx:for='{{arr99}}' wx:for-item='i'>
       <view wx:for='{{arr99}}' wx:for-item='j'>
